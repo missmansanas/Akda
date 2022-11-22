@@ -2,7 +2,11 @@
 
 /* ROOT COLORS */
 :root {
-
+    --space-blue: #335c67ff;
+    --champagne-yellow: #fff3b0ff;
+    --indian-yellow: #e09f3eff;
+    --auburn-red: #9e2a2bff;
+    --rosewood-red: #540b0eff;
 }
 
 /* ROOT DEFAULTS */
@@ -16,31 +20,59 @@ body {
     margin: 0;
 }
 
+/* GLOBAL > BUTTONS */
+.btn-1{ 
+    font-family: inherit; 
+    font-weight: 0; 
+    font-size: 16px; 
+    color: #ffffff; 
+    background: linear-gradient(90deg, #0066CC 0%, #d62828 100%); 
+    padding: 10px 36px; 
+    border: none; 
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 22px 50px;
+    transition : 327ms;
+    transform: translateY(0);
+    }
+    
+.btn-1:hover{ 
+    transition : 327ms;
+    padding: 10px 60px;
+    transform : translateY(-0px);
+    background: linear-gradient(90deg, #0066CC 0%, #d62828 100%);
+    color: #ffffff;
+    border: none;
+    }
+   
+    
+
 /* NAVIGATION */
 .topnav {
-    background-color: black;
+    background-color: var(--champagne-yellow);
     overflow: hidden;
     margin: 0px;
     padding: 0px;
 }
 
 .topnav a {
-    float: left;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 14px;
 }
 
+.topnav .left a { float: left; }
+.topnav .right a { float: right; }
+
 .topnav a:hover {
-    background-color: #333;
+    text-shadow: 4px 4px 8px var(--indian-yellow);
     color: black;
 }
 
 .topnav a.active {
-    background-color: palevioletred;
-    color: white;
+    background-color: inherit;
+    text-decoration: underline wavy var(--indian-yellow) 1.5px;
 }
 
 /* HOME > HERO SECTION */
@@ -55,14 +87,16 @@ section#hero {
     align-items: flex-end;
 }
 
-section#features,
-section#featured,
-section#ltd-offer,
-section#store,
-section#footer {
+div.hero {
+    padding: 36px;
+}
+
+/* ALL SECTIONS EXCEPT HERO */
+
+section.section {
     margin: 0;
     padding: 60px;
-    border: 1px dashed gainsboro;
+    border: 1px dashed gainsboro;             /* REMOVE THIS LATER */
 }
 
 /* HOME > FEATURES SECTION */
@@ -71,13 +105,14 @@ section#features {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
-    place-items: center stretch;
+    place-items: center center;
     justify-content: space-between;
     gap: 24px 24px;
 }
 
-section#features > div {
-    margin: 4px 4px;
+section#features > div.site-desc {
+    margin: 4px auto;
+    max-width: 450px;
 }
 
 /* HOME > FEATURED PRODUCTS */
@@ -86,16 +121,17 @@ section#features > div {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-auto-columns: max-content;
     grid-auto-rows: 1fr;
-    gap: 12px 12px;
+    gap: 12px 6px;
     grid-auto-flow: row;
-    justify-content: space-evenly;
-    align-content: space-evenly;
+    place-items: center center;
+    place-content: space-evenly;
   }
 
 .featured-products > div.product {
-    min-width: 60px;
+    width: calc(100% - 16px);
     height: 250px;
-    border: 1px solid #333;
+    border: 1px dotted var(--indian-yellow);
+    padding: 8px;
 }
 
 /* HOME > LIMITED TIME OFFER */
@@ -114,19 +150,64 @@ section#features > div {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
     align-items: center;
+    gap: 12px 12px;
 }
 
 #store > img {
     width: 100%;
     padding: 0;
     margin: 0;
+    flex: 2 0 100%;
 }
 
 /* GLOBAL > FOOTER */
 div.footer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 36px 36px;
     justify-content: flex-start;
     align-content: flex-start;
 }
+
+/* ===================================
+    FOR MOBILE
+=================================== */
+
+@media only screen and (max-width: 768px) {
+    section#features {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.featured-products {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px 6px;
+    }
+
+    div.featured-products > div.product {
+        flex: 1 0 100px;
+        max-height: 20vh;
+    }
+
+    section#store {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    div.footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 12px 12px;
+        place-content: center;
+    }
+      
+}
+
+/* ===================================
+    END OF MOBILE DIMENSIONS
+=================================== */
+
+
