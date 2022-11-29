@@ -91,23 +91,57 @@ function loadToCart() {
     }
 
     for (var i = 0; i < cart.length; i++) {
-        var cartItems = document.getElementsByClassName('cart-items')[0];           // Find cart-row parent
-        var cartRow = document.createElement('div');                                // Create new cart row
-        var cartRowContents = `
-            <div class="cart-item cart-column">
-                <img src="` + cart[i].imgSrc + `" alt="" class="cart-item-img" width="250" height="250">
-                <span class="cart-item-title">`+ cart[i].productName +`</span>
-            </div>
-            <span class="cart-price cart-column">` + cart[i].price + `</span>
-            <div class="cart-qty cart-column">
-                <input type="number" value="1" class="cart-qty-input">
-                <button class="btn-3 btn-remove">Remove</button>
-            </div>
-        `
+        // Find cart container
+        var cartItems = document.getElementsByClassName('cart-items')[0];
+
+        // Create a new row
+        var cartRow = document.createElement('div');     
         cartRow.classList.add('cart-row');
-        cartRow.innerHTML = cartRowContents;                                        // Add content to new row
-        cartItems.append(cartRow);                              // Add new cart-row to cartItems container
-        console.log(i);
+
+        // Create new item group
+        var cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item','cart-column');
+
+        // Create item img
+        var rowImg = document.createElement('img');
+            rowImg.setAttribute('src',cart[i].imgSrc);
+            rowImg.classList.add('cart-item-img');
+
+        // Create item name span
+        var rowTitle = document.createElement('span');
+            rowTitle.classList.add('cart-item-title');
+            rowTitle.innerHTML = cart[i].productName;
+
+        // Create item price span
+        var rowPrice = document.createElement('span');
+            rowPrice.classList.add('cart-price', 'cart-column');
+            rowPrice.innerHTML = cart[i].price;
+
+        // Create QTY input + REMOVE btn
+        var rowQty = document.createElement('div');
+            rowQty.classList.add('cart-qty','cart-column');
+            var rowQtyInput = document.createElement('input'); // Qty input
+                rowQtyInput.setAttribute('type','number');
+                rowQtyInput.setAttribute('value',1);
+                rowQtyInput.classList.add('cart-qty-input');
+            var rowBtn = document.createElement('button');
+                rowBtn.classList.add('btn-3', 'btn-remove');
+                rowBtn.innerText = 'Remove';
+
+        // Append all new elements
+        cartRow.appendChild(cartItem);
+        cartItems.appendChild(cartRow);       
+
+        cartItem.appendChild(rowImg);
+        cartItem.appendChild(rowTitle);
+
+        cartRow.appendChild(rowPrice);
+        cartRow.appendChild(rowQty);
+        rowQty.appendChild(rowQtyInput);
+        rowQty.appendChild(rowBtn);
+
+        cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem);
+        cartRow.getElementsByClassName('cart-qty-input')[0].addEventListener('change', qtyChanged);
     }
     window.sessionStorage.setItem('shoppingCart',JSON.stringify(cart));
 
