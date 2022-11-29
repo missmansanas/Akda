@@ -25,13 +25,12 @@ for (var i = 0; i < addToCartBtns.length; i++) {
 
 // Functions 
 
-
-
 // When 'Remove' button is clicked 
 function removeCartItem(event) {
     var buttonClicked = event.target;
     buttonClicked.parentElement.parentElement.remove();
     updateCartTotal();
+    window.sessionStorage.setItem('shoppingCart',JSON.stringify(cart));
 }
 
 // When 'Qty' field is changed
@@ -41,57 +40,7 @@ function qtyChanged(event) {
         input.value = 1;
     }
     updateCartTotal();
-}
-
-// When 'Add to Cart' button is clicked
-function addToCart(event) {
-    var button = event.target;
-    var shopItem = button.parentElement.parentElement;
-    var productName = shopItem.getElementsByClassName('product-name')[0].innerText;
-    var price = shopItem.getElementsByClassName('price')[0].innerText;
-    var imgSrc = shopItem.getElementsByClassName('product-img')[0].src;
-
-    var productAdded = {'productName': productName, 'price': price, 'imgSrc': imgSrc };
-
-    cart.push(productAdded);
-    alert(productName + " was added to your cart!");
     window.sessionStorage.setItem('shoppingCart',JSON.stringify(cart));
-
-    // addItemToCart(productName, price, imgSrc);
-    console.log("Item added to cart.");
-}
-
-function loadToCart() {
-    if(window.sessionStorage.getItem('shoppingCart')) {
-        cart = window.sessionStorage.getItem('shoppingCart')
-        var newCart = JSON.parse(cart);
-        console.log(newCart);
-    }
-    if (cart === null) {
-        cart = [];
-    }
-
-    for (var i = 0; i < newCart.length; i++) {
-        var cartItems = document.getElementsByClassName('cart-items')[0];           // Find cart-row parent
-        var cartRow = document.createElement('div');                                // Create new cart row
-        cartRow.classList.add('cart-row');
-        cartRow.innerHTML = cartRowContents;                                        // Add content to new row
-
-        var cartRowContents = `
-            <div class="cart-item cart-column">
-                <img src="` + newCart[i].imgSrc + `" alt="" class="cart-item-img" width="250" height="250">
-                <span class="cart-item-title">`+ newCart[i].productName +`</span>
-            </div>
-            <span class="cart-price cart-column">` + newCart[i].price + `</span>
-            <div class="cart-qty cart-column">
-                <input type="number" value="1" class="cart-qty-input">
-                <button class="btn-3 btn-remove">Remove</button>
-            </div>
-        `
-        cartItems.append(cartRow);                              // Add new cart-row to cartItems container
-        console.log(i);
-    }
-
 }
 
 function updateCartTotal() {
@@ -111,3 +60,55 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '₱' + total;
 }
 
+// When 'Add to Cart' button is clicked
+function addToCart(event) {
+    var button = event.target;
+    var shopItem = button.parentElement.parentElement;
+    var productName = shopItem.getElementsByClassName('product-name')[0].innerText;
+    var price = shopItem.getElementsByClassName('price')[0].innerText;
+    var imgSrc = shopItem.getElementsByClassName('product-img')[0].src;
+
+    var productAdded = {'productName': productName, 'price': price, 'imgSrc': imgSrc };
+
+    cart = window.sessionStorage.getItem('shoppingCart')
+    cart = JSON.parse(cart);
+    cart.push(productAdded);
+    alert(productName + " was added to your cart!");
+    window.sessionStorage.setItem('shoppingCart',JSON.stringify(cart));
+    console.log("Item added to cart.");
+    console.log(cart);
+}
+
+// When Cart page loads
+function loadToCart() {
+    if(window.sessionStorage.getItem('shoppingCart')) {
+        cart = window.sessionStorage.getItem('shoppingCart')
+        cart = JSON.parse(cart);
+        console.log(cart);
+    }
+    if (cart === null) {
+        cart = [];
+    }
+
+    for (var i = 0; i < cart.length; i++) {
+        var cartItems = document.getElementsByClassName('cart-items')[0];           // Find cart-row parent
+        var cartRow = document.createElement('div');                                // Create new cart row
+        var cartRowContents = `
+            <div class="cart-item cart-column">
+                <img src="` + cart[i].imgSrc + `" alt="" class="cart-item-img" width="250" height="250">
+                <span class="cart-item-title">`+ cart[i].productName +`</span>
+            </div>
+            <span class="cart-price cart-column">` + cart[i].price + `</span>
+            <div class="cart-qty cart-column">
+                <input type="number" value="1" class="cart-qty-input">
+                <button class="btn-3 btn-remove">Remove</button>
+            </div>
+        `
+        cartRow.classList.add('cart-row');
+        cartRow.innerHTML = cartRowContents;                                        // Add content to new row
+        cartItems.append(cartRow);                              // Add new cart-row to cartItems container
+        console.log(i);
+    }
+    window.sessionStorage.setItem('shoppingCart',JSON.stringify(cart));
+
+}
