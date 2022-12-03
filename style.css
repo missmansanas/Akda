@@ -1,12 +1,12 @@
 /* CUSTOM SETTINGS */
 @font-face {
     font-family: 'Prestige';
-    src: url(../fonts/Prestige\ Signature\ Script.ttf);
+    src: url(fonts/Prestige\ Signature\ Script.ttf);
   }
 
 @font-face {
     font-family: 'Antic';
-    src: url(../fonts/AnticDidone-Regular.otf);
+    src: url(fonts/AnticDidone-Regular.otf);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
