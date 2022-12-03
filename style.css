@@ -219,19 +219,19 @@ div.hero-left > .slide {
 }
 
 #slide1 {
-    background-image: url(../img/prophsee-brown-journal.jpg);
+    background-image: url(img/prophsee-brown-journal.jpg);
     background-position: 50% 80%;
     place-content: center;
 }
 
 #slide2 {
-    background-image: url(../img/store-art-interior.jpg);
+    background-image: url(img/store-art-interior.jpg);
     background-position: 50% 70%;
     place-content: center;
 }
 
 #slide3 {
-    background-image: url(../img/Travelers-Notebook-Travel-Pass-Demo.jpg);
+    background-image: url(img/Travelers-Notebook-Travel-Pass-Demo.jpg);
     background-position: 100% 70%;
     place-content: center;
 }
@@ -375,7 +375,7 @@ section#shop-hero {
 
 div.shop-hero {
     height: 100%;
-    background-image: url("../img/Traveler\'s-Notebook-Open-Sample.jpg");
+    background-image: url("img/Traveler\'s-Notebook-Open-Sample.jpg");
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: cover;
