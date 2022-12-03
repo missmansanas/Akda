@@ -94,19 +94,19 @@ function addToCart(event) {
 
     cart = window.sessionStorage.getItem('shoppingCart')
     cart = JSON.parse(cart);
+
     cart.push(productAdded);
     alert(productName + " was added to your cart!");
     window.sessionStorage.setItem('shoppingCart',JSON.stringify(cart));
     console.log("Item added to cart.");
 
     // for (i = 0; i < cart.length; i++) {
-    //     if (cart[i].productName == productAdded.productName) {
-    //         alert('Item is already in your cart.')
-    //         break;
+    //     if (cart[i] === productAdded) {
+    //         alert('Item is already in your cart.');
     //     } else {
     //         cart.push(productAdded);
     //         if (cart.push(productAdded)) { alert(productName + " was added to your cart!"); 
-    //         break;
+    //          console.log('Item added to cart.');
     //         }
     //     }
     // }

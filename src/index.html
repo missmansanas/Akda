@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="cart.js" async></script>
+    <script src="./js/cart.js" async></script>
     <title>Hobby Helper</title>
 </head>
 <body onload="loadToCart()">
@@ -14,7 +14,6 @@
 <!-- Navigation -->
 <div class="topnav">
     <div class="left">
-        <a href="index.html" id="logo">Akda</a>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">Our Story</a>
         <a href="shop.html">Shop</a>
@@ -23,69 +22,73 @@
         <a href=""><i class="fa fa-user-circle" style="font-size:18px"></i> <span class="nav-label">Account</span></a>
         <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:18px"></i> <span class="nav-label">View Cart</span></a>
     </div>
-
+</div>
+<div class="logo">
+    <a href="index.html" id="logo">Akda</a>
 </div>
 
 <!-- Hero -->
 <section id="hero" class="main-hero">
     <div class="hero">
         <div class="hero-left">
-            <h1 class="pfont textshadow-black" style="font-size:90px; padding:0px; margin: -50px; font-weight: 100;">Akda</h1>
-            <h1>Exquisite essentials to write your story.</h1>
-            <a href="#featured"><button class="btn-2">Shop Now</button></a>
+            <div class="slide fade" id="slide1">
+                <h1 class="pfont textshadow-white" style="font-size:90px; padding:0px; margin: -50px; font-weight: 100;">Akda</h1>
+                <h1>Exquisite essentials to write your story.</h1>
+                <a href="#featured"><button class="btn-2">Shop Now</button></a>
+            </div>
+            <div class="slide fade" id="slide2">
+                <h1 class="pfont textshadow-black" style="font-size:90px; padding:0px; margin: 0; font-weight: 100;">Write your best year with us.</h1>
+                <!-- <h1>2 / 3</h1> -->
+                <a href="#featured"><button class="btn-2">Shop Now</button></a>
+            </div>
+            <div class="slide fade" id="slide3">
+                <h1 class="pfont textshadow-black" style="font-size:90px; padding:0px; margin: -50px; font-weight: 100;">Akda</h1>
+                <h1>3 / 3</h1>
+                <a href="#featured"><button class="btn-2">Shop Now</button></a>
+            </div>
+            <a onclick="plusSlides(-1)" class="prev">&#10094;</a>
+            <a onclick="plusSlides(1)" class="next">&#10095;</a>
         </div>        
         <div class="hero-right">
-            <h1>Enhancing the writing experience. Bringing back the art of pen and paper.</h1>
+            <h1>Bringing back the art of pen and paper.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis aliquid distinctio dolore, dignissimos saepe ut eius ad ullam quidem magnam at voluptatum similique omnis quos reprehenderit consectetur libero enim minus.</p>
         </div>
     </div>
-
+    <script src="./js/index.js"></script>
 </section>
 
 <!-- Site Features -->
-<section id="features" class="section">
+<section id="features">
 
-    <div class="site-desc">
-        <h2>Site Features 1</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum excepturi officiis quia sint maiores a soluta laboriosam at nesciunt! </p>
-    </div>
-    <div class="site-desc">
-        <h2>Site Features 2</h1>
-        <p>Harum excepturi officiis quia sint maiores a soluta laboriosam at nesciunt! Omnis accusamus unde reprehenderit delectus! Blanditiis facere mollitia ab eveniet est?</p>
-    </div>
-    <div class="site-desc">
-        <h2>Site Features 3</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis facere mollitia ab eveniet est?</p>
-    </div>
-    <div class="site-desc">
-        <h2>Site Features 4</h1>
-        <p>Omnis accusamus unde reprehenderit delectus! Blanditiis facere mollitia ab eveniet est?</p>
-    </div class="site-desc">
+        <p><i class="fa fa-globe" style="font-size:18px"></i> International Shipping</p>
+        <p><i class="fa fa-circle-o-notch" style="font-size:18px"></i> 30-Day Return Policy</p>
+        <p><i class="fa fa-leaf" style="font-size:18px"></i> Sustainably Produced</p>
 </section>
 
 <!-- Featured Products -->
 <section id="featured" class="section">
     
-    <h2 style="text-align: center;">Featured Products</h2>
+    <h2 style="text-align: center;">Meet Our Favorites</h2>
     <div class="featured-products">
 
         <div class="product">
-            <img class="product" src="../img/placeholder-612.jpg">
-            <b>Name</b>
+            <img class="product" src="../img/products/Travelers-Notebook-Regular-Size-Brown-Set.jpg">
+            <span>Traveler's Notebooks</span>
         </div>
 
         <div class="product">
-            <img class="product" src="../img/placeholder-612.jpg">
-            <b>Name</b>
+            <img class="product" src="../img/Fountain-Pens.jpg">
+            <span>Fountain Pens</span>
         </div>
 
         <div class="product">
-            <img class="product" src="../img/placeholder-612.jpg">
-            <b>Name</b>
+            <img class="product" src="../img/Watercolor-Pans.jpg">
+            <span>Watercolor Sets</span>
         </div>
 
         <div class="product">
-            <img class="product" src="../img/placeholder-612.jpg">
-            <b>Name</b>
+            <img class="product" src="../img/Notebook-Therapy-Moonflower.jpg">
+            <span>Bullet Journals</span>
         </div>
 
 
@@ -100,7 +103,7 @@
         <h2>Free shipping for Philippine orders above PHP 1,500</h2>
     </div>
     <div>
-        <h2>Use discount code ASDF2023 on checkout.</h2>
+        <!-- <h2>Use discount code ASDF2023 on checkout.</h2> -->
     </div>
 
 
@@ -109,7 +112,7 @@
 <!-- STORE -->
 <section id="store" class="section">
     <div>
-        <h2>Visit our store</h2>
+        <h2 class="pfont" style="font-size:48px; margin-bottom: -20px;">Visit our store</h2>
         <h3>G/F Piazzetta Bldg, Sumulong Circle, Antipolo City</h3>
         <p><b>Store hours</b>:<br/>
             Tuesday to Sunday, 9:00 A.M. to 7 P.M.<br/>
@@ -123,14 +126,20 @@
 <section id="footer" class="section">
     <div class="footer">
         <div class="footer-col" style="flex-grow: 0;">
-            <h4>About Us</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <h3>About <span class="pfont" style="font-size: 36px; font-weight: 100; margin: 0px 3px; padding: 0px;">Akda</span></h3>
+            <p>Akda is a specialty store celebrating the love for pen and paper. We take pride in our collection of notebooks, journals, planners, fountain pens, and art materials.</p>
+            <p>Website design and development © Apple Nocom 2022.</p>
         </div>
         <div class="footer-col" style="flex-grow: 1;">
-            <h4>Sitemap</h4>
+            <h3>Info</h3>
+            <p><a href="about.html">About</a></p>
+            <p><a href="shop.html">All Products</a></p>
+            <p><a href="about.html" class="disabled">Frequently Asked Questions</a></p>
         </div>
         <div class="footer-col" style="flex-grow: 1;">
-            <h4>Extras</h4>
+            <h3>Extras</h3>
+            <p><a href="about.html" class="disabled">Careers</a></p>
+            <p><a href="about.html" class="disabled">Terms and Conditions</a></p>
         </div>
     </div>
 </section>

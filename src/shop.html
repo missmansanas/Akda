@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="cart.js" async></script>
-    <script src="shop.js" async></script>
+    <script src="./js/cart.js" async></script>
     <title>Shop</title>
 </head>
 <body onload="loadToCart()">
@@ -27,33 +26,45 @@
 </div>
 
 <!-- Hero --> 
-<!-- <section id="hero" class="shop-hero">
+<section id="shop-hero">
 
-    <div class="hero">
-        <h1>Home of Creative Hobbyists in the Philippines</h1>
-        <a href="#features"><button class="btn-1">Explore</button></a>
+    <div class="shop-hero">
+        <h1>All Products</h1>
     </div>
 
-</section> -->
+</section>
+
+<!-- Site Features -->
+<section id="features">
+
+    <p><i class="fa fa-globe" style="font-size:18px"></i> International Shipping</p>
+    <p><i class="fa fa-circle-o-notch" style="font-size:18px"></i> 30-Day Return Policy</p>
+    <p><i class="fa fa-leaf" style="font-size:18px"></i> Sustainably Produced</p>
+</section>
+
 
 <!-- SHOP SECTION -->
 <!-- <div id="myBtnContainer">
     <button class="btn-3 active" onclick="filterSelection('all')">Show All</button>
     <button class="btn-3" onclick="filterSelection('pens')">Pens</button>
     <button class="btn-3" onclick="filterSelection('notebooks')">Notebooks</button>
-</div> -->
+
+</div>
+    <script src="./js/shop.js" async></script>
+ -->
+
 
 <section id="shop-products" class="section">
 
     <div class="product-card notebooks" id="product-01">
-        <img class="product-img" src="../img/products/Travelers-Notebook-Regular-Size-Black.jpg">
+        <img class="product-img" src="../img/products/Travelers-Notebook-Regular-Size-Black.png">
         <h4 class="product-name">Traveler's Notebook Regular Size in Black</h4>
         <p class="price">₱ 2,999.00</p>
         <p><button onclick="addToCart('product-01')" class="btn-addToCart">Add to cart</button></p>
     </div>
 
     <div class="product-card notebooks" id="product-02">
-        <img class="product-img" src="../img/products/Travelers-Notebook-Regular-Size-Brown.jpg">
+        <img class="product-img" src="../img/products/Travelers-Notebook-Regular-Size-Brown.png">
         <h4 class="product-name">Traveler's Notebook Regular Size in Brown</h4>
         <p class="price">₱ 2,999.00</p>
         <p>
@@ -62,21 +73,21 @@
     </div>
 
     <div class="product-card notebooks" id="product-03">
-        <img class="product-img" src="../img/products/Travelers-Notebook-Regular-Size-Camel.jpg">
+        <img class="product-img" src="../img/products/Travelers-Notebook-Regular-Size-Camel.png">
         <h4 class="product-name">Traveler's Notebook Regular Size in Camel</h4>
         <p class="price">₱ 2,999.00</p>
         <p><button onclick="addToCart('product-03')" class="btn-addToCart">Add to cart</button></p>
     </div>
 
     <div class="product-card notebooks" id="product-04">
-        <img class="product-img" src="../img/products/Travelers-Notebook-Passport-Size-Black.jpg">
+        <img class="product-img" src="../img/products/Travelers-Notebook-Passport-Size-Black.png">
         <h4 class="product-name">Traveler's Notebook Passport Size in Black</h4>
         <p class="price">₱ 1,999.00</p>
         <p><button onclick="addToCart('product-04')" class="btn-addToCart">Add to cart</button></p>
     </div>
 
     <div class="product-card notebooks" id="product-05">
-        <img class="product-img" src="../img/products/Travelers-Notebook-Passport-Size-Brown.jpg">
+        <img class="product-img" src="../img/products/Travelers-Notebook-Passport-Size-Brown.png">
         <h4 class="product-name">Traveler's Notebook Passport Size in Brown</h4>
         <p class="price">₱ 1,999.00</p>
         <p><button onclick="addToCart('product-05')" class="btn-addToCart">Add to cart</button></p>
@@ -138,6 +149,27 @@
         <p><button onclick="addToCart('product-13')" class="btn-addToCart">Add to cart</button></p>
     </div>
 
+    <div class="product-card paints" id="product-14">
+        <img class="product-img" src="../img/products/Sennelier-12-Artist-Watercolour-Half-pans-Metal-Box-_includes-1-brush.jpg">
+        <h4 class="product-name">Sennelier Artist Watercolor Set 12 Half-pans in Metal Box</h4>
+        <p class="price">₱ 4,780.00</p>
+        <p><button onclick="addToCart('product-11')" class="btn-addToCart">Add to cart</button></p>
+    </div>
+
+    <div class="product-card paints" id="product-15">
+        <img class="product-img" src="../img/products/Sennelier-24-Artist-Watercolour-Half-pans-Metal-Box-_includes-1-brush.jpg">
+        <h4 class="product-name">Sennelier Artist Watercolor Set 24 Half-pans in Metal Box</h4>
+        <p class="price">₱ 9,590.00</p>
+        <p><button onclick="addToCart('product-12')" class="btn-addToCart">Add to cart</button></p>
+    </div>
+
+    <div class="product-card paints" id="product-16">
+        <img class="product-img" src="../img/products/Sennelier-14-Artist-Watercolour-Half-pans-Travel-Box.jpg">
+        <h4 class="product-name">Sennelier Artist Watercolor Set 14 Half-pans in Travel Box</h4>
+        <p class="price">₱ 4,890.00</p>
+        <p><button onclick="addToCart('product-13')" class="btn-addToCart">Add to cart</button></p>
+    </div>
+
 
 </section>
 
@@ -147,18 +179,25 @@
 <!-- FOOTER -->
 <section id="footer" class="section">
     <div class="footer">
-    <div class="footer-col">
-        <h4>About Us</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="footer-col">
-        <h4>Sitemap</h4>
-    </div>
-    <div class="footer-col">
-        <h4>Extras</h4>
-    </div>
+        <div class="footer-col" style="flex-grow: 0;">
+            <h3>About <span class="pfont" style="font-size: 36px; font-weight: 100; margin: 0px 3px; padding: 0px;">Akda</span></h3>
+            <p>Akda is a specialty store celebrating the love for pen and paper. We take pride in our collection of notebooks, journals, planners, fountain pens, and art materials.</p>
+            <p>Website design and development © Apple Nocom 2022.</p>
+        </div>
+        <div class="footer-col" style="flex-grow: 1;">
+            <h3>Info</h3>
+            <p><a href="about.html">About</a></p>
+            <p><a href="shop.html">All Products</a></p>
+            <p><a href="about.html" class="disabled">Frequently Asked Questions</a></p>
+        </div>
+        <div class="footer-col" style="flex-grow: 1;">
+            <h3>Extras</h3>
+            <p><a href="about.html" class="disabled">Careers</a></p>
+            <p><a href="about.html" class="disabled">Terms and Conditions</a></p>
+        </div>
     </div>
 </section>
+
 
 </body>
 </html>
