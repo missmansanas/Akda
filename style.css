@@ -93,11 +93,13 @@ a:visited {
     background-color: transparent;
     text-transform: uppercase;
     font-size: 16px;
-    color: white;
+    color: black;
     border: none;
     padding: 10px 36px;
     transition: 300ms;
     transform: translateY(0);
+    margin: auto;
+    text-align: center;
 }  
 
 .btn-2:before{
@@ -107,7 +109,7 @@ a:visited {
     top:0em;
     border-width:2px;
     border-style:solid;
-    border-color:white;
+    border-color:black;
     position:absolute;
     border-right-color:transparent;
     width:100%;
@@ -124,7 +126,7 @@ a:visited {
     top:0em;
     border-width:2px;
     border-style:solid;
-    border-color:white;
+    border-color:black;
     border-left-color:transparent;
     border-top-color:transparent;
     position:absolute;
@@ -190,7 +192,6 @@ a:visited {
 
 .topnav a.active {
     background: transparent;
-    text-decoration: underline dashed black 1px;
     border: none;
     transform: rotate(-6deg);
     -webkit-transform: rotate(-6deg);
@@ -315,19 +316,19 @@ div.hero-left > .slide {
 #slide1 {
     background-image: url(img/prophsee-brown-journal.jpg);
     background-position: 50% 80%;
-    place-content: center;
+    place-content: flex-end;
 }
 
 #slide2 {
     background-image: url(img/store-art-interior.jpg);
     background-position: 50% 70%;
-    place-content: center;
+    place-content: flex-end;
 }
 
 #slide3 {
     background-image: url(img/annie-spratt-collage.jpg);
     background-position: 100% 70%;
-    place-content: center;
+    place-content: flex-end;
 }
 
 .prev, .next {
@@ -496,6 +497,17 @@ div.about-hero {
     padding: 30px;
 }
 
+section#about-us {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+}
+
+section#about-us img {
+    width: 100%;
+}
+
 
 /* SHOP > HERO */
 
@@ -633,7 +645,7 @@ a.disabled {
     cursor: not-allowed;
     pointer-events: none;
     text-decoration: none;
-    color: grey;
+    color: inherit;
 }
 
 
@@ -741,6 +753,19 @@ div#payment-form {
     padding: 0px 24px 24px;
 }
 
+/* Account form */
+div#account-form {
+    width: 300px;
+    background-color: white;
+    padding: 24px;
+    margin: auto;
+}
+
+div#account-form label[for="mobile"] {
+    position: relative;
+    left: 10%;
+}
+
 /* Remove spinner from cc number input */
 input#cardnumber::-webkit-outer-spin-button,
 input#cardnumber::-webkit-inner-spin-button,
@@ -765,7 +790,8 @@ input[type=number]#cvv {
     padding: 0px;
 }
 
-label[for="mobile"], label[for="cvv"] {
+p.customer-details label[for="mobile"],
+p.customer-details label[for="cvv"] {
     position: relative;
     left: calc(25% - 32px);
 }
@@ -877,14 +903,13 @@ input[type="submit"].btn-1:hover {
 
     .featured-products > div.product {
         flex: 0 0 100px;
-        max-height: 25vh;
         margin: 12px;
         font-size: 30px;
     }
 
     .featured-products > div.product > img.product {
         margin-bottom: -35px;
-        height: 25vh;
+        height: 250px;
     }
 
     section#ltd-offer {
@@ -1010,6 +1035,11 @@ input[type="submit"].btn-1:hover {
         height: calc(50% - calc(20px * 2));
     }
 
+    div.hero-right h1 {
+        font-size: 36px !important;
+        line-height: 40px;
+    }
+
     div#myBtnContainer {
         padding: 30px 8px 0px;
         display: flex;
@@ -1034,8 +1064,9 @@ input[type="submit"].btn-1:hover {
     .featured-products > div.product {
         font-size: 20px;
     }
-    .featured-products > div.product > img.product {
+    .featured-products > div.product img.product {
         margin-bottom: -30px;
+        height: 150px;
     }
 
     div.footer {
