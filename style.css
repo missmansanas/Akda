@@ -630,6 +630,7 @@ div.footer {
     gap: 36px 36px;
     justify-content: flex-start;
     align-content: flex-start;
+    border-top: 1px dashed black;
 }
 
 div.footer a {
@@ -919,11 +920,12 @@ input[type="submit"].btn-1:hover {
     section#store {
         display: flex;
         flex-direction: column-reverse;
+        padding: 24px 12px !important;
     }
 
     section#shop-products {
         grid-template-columns: 1fr 1fr;
-        gap: 12px 0px;
+        gap: 24px 0px;
     }
 
     div.product-card button {
