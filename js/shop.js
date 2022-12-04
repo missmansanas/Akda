@@ -1,4 +1,5 @@
-filterSelection("all")
+filterSelection("all");
+
 function filterSelection(filter) {
   var products, i;
   products = document.getElementsByClassName("product-card");

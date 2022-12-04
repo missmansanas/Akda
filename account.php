@@ -19,7 +19,7 @@
         <a href="shop.html">Shop</a>
     </div>
     <div class="right">
-        <a href=""><i class="fa fa-user-circle" style="font-size:18px"></i> <span class="nav-label">Account</span></a>
+        <a class="active" href="account.php"><i class="fa fa-user-circle" style="font-size:18px"></i> <span class="nav-label">Account</span></a>
         <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:18px"></i> <span class="nav-label">View Cart</span></a>
     </div>
 

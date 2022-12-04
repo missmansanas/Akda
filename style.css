@@ -48,6 +48,19 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--secondary-font);
 }
 
+a:hover, button:hover, input[type="submit"] {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 .textshadow-black {    text-shadow: 2px 2px 8px #00000070; } 
 .textshadow-white {    text-shadow: 2px 2px 8px #ffffff70; }
 
@@ -77,18 +90,53 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 .btn-2 {
-    background-color: #FFFFFF25;
+    background-color: transparent;
     text-transform: uppercase;
-    color: black;
-    border: 1px solid black; 
+    font-size: 16px;
+    color: white;
+    border: none;
     padding: 10px 36px;
-    border-radius: 22px 50px;
     transition: 300ms;
     transform: translateY(0);
 }  
 
+.btn-2:before{
+    content:"";
+    z-index:-1;
+    left:0em;
+    top:0em;
+    border-width:2px;
+    border-style:solid;
+    border-color:white;
+    position:absolute;
+    border-right-color:transparent;
+    width:100%;
+    height:100%;
+    transform:rotate(2deg);
+    opacity:1;
+    border-radius:0.25em;
+  }
+  
+  .btn-2:after{
+    content:"";
+    z-index:-1;
+    left:0em;
+    top:0em;
+    border-width:2px;
+    border-style:solid;
+    border-color:white;
+    border-left-color:transparent;
+    border-top-color:transparent;
+    position:absolute;
+    width:100%;
+    height:100%;
+    transform:rotate(-1deg);
+    opacity:1;
+    border-radius:0.25em;
+  }
+
 .btn-2:hover { 
-    background-color: #FFFFFF99;
+    background-color: transparent;
     transition : 300ms all ease-in-out;
     padding: 10px 60px;
     }
@@ -97,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--gold-yellow);
     border: none;
     padding: 10px 24px;
+    margin: auto 8px auto 0px;
     text-transform: uppercase;
     color: white;
     border-radius: 22px 50px;
@@ -123,7 +172,8 @@ h1, h2, h3, h4, h5, h6 {
 .topnav a {
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 7px 8px;
+    margin: 7px 8px;
     text-decoration: none;
     font-size: 14px;
 }
@@ -139,9 +189,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .topnav a.active {
-    background-color: inherit;
-    text-decoration: underline wavy var(--indian-yellow) 1.5px;
+    background: transparent;
+    text-decoration: underline dashed black 1px;
+    border: none;
+    transform: rotate(-6deg);
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
 }
+
+a.active:before{
+    content:"";
+    z-index:-1;
+    left:-0.5em;
+    top:-0.1em;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--auburn-red);
+    position:absolute;
+    border-right-color:transparent;
+    width:100%;
+    height:1em;
+    transform:rotate(2deg);
+    opacity:0.7;
+    border-radius:50%;
+    padding:7px 8px;
+  }
+  
+  a.active:after{
+    content:"";
+    z-index:-1;
+    left:-0.5em;
+    top:0.1em;
+    padding:7px 8px;
+    border-width:2px;
+    border-style:solid;
+    border-color:var(--auburn-red);
+    border-left-color:transparent;
+    border-top-color:transparent;
+    position:absolute;
+    width:100%;
+    height:1em;
+    transform:rotate(-1deg);
+    opacity:0.7;
+    border-radius:50%;
+  }
 
 div.logo {
     background-color: transparent;
@@ -159,15 +250,18 @@ a#logo {
     margin: auto;
     margin-top: -48px;
     margin-bottom: 0px;
-    color: black;
+    color: var(--indian-yellow);
     text-decoration: none;
     position: relative;
     z-index: 1;
+    text-shadow: 2px 4px 6px black;
+    transition: 300ms ease-in-out;
 }
 
 a#logo:hover {
     text-shadow: none !important;
-    color: black;
+    color: var(--auburn-red);
+    transition: 300ms ease-in-out;
 }
 
 /* HOME > HERO SECTION */
@@ -231,7 +325,7 @@ div.hero-left > .slide {
 }
 
 #slide3 {
-    background-image: url(img/Travelers-Notebook-Travel-Pass-Demo.jpg);
+    background-image: url(img/annie-spratt-collage.jpg);
     background-position: 100% 70%;
     place-content: center;
 }
@@ -244,9 +338,9 @@ div.hero-left > .slide {
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
+    color: white;
+    font-weight: 100;
+    font-size: 24px;
     transition: 0.6s ease;
     border-radius: 0px 3px 3px 0;
     user-select: none;
@@ -280,6 +374,25 @@ div.hero-left > .slide {
     color: white;
 }
 
+.hero-right h1 {
+    font-size: 90px;
+    padding: 0;
+    line-height: 90px;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+.hero-right > p {
+    background-color: var(--alabaster-white);
+    border-radius: 1px 1px 4px 1px;
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    color: black;
+    box-shadow: 2px 2px 2px #00000033;
+    padding: 4px 8px;
+}
+
 /* ALL SECTIONS EXCEPT HERO */
 
 section.section {
@@ -295,6 +408,7 @@ section#features {
     place-items: center center;
     justify-content: space-between;
     gap: 24px 24px;
+    padding: 0px 30px;
 }
 
 
@@ -311,7 +425,7 @@ section#featured {
     grid-auto-rows: max-content;
     gap: 12px 6px;
     grid-auto-flow: row;
-    place-items: center center;
+    place-items: flex-start center;
     place-content: space-evenly;
     min-height: 50vh;
   }
@@ -326,12 +440,13 @@ section#featured {
     font-size: 50px;
 }
 
-.featured-products > div.product > img.product {
+.featured-products > div.product img.product {
     width: 100%;
-    height: 320px;
+    height: 224px;
     margin-bottom: -65px;
     object-fit: cover;
     transition: 0.5s all ease-in-out;
+    box-shadow: 2px 2px 3px #00000033;
 }
 
 /* HOME > LIMITED TIME OFFER */
@@ -362,6 +477,25 @@ section#featured {
     flex: 2 0 100%;
 }
 
+/* ABOUT */
+
+section#about-hero {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 100%;
+}
+
+div.about-hero {
+    height: 100%;
+    background-image: url("img/estee-janssens-scrapbook.jpg");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+}
+
 
 /* SHOP > HERO */
 
@@ -375,11 +509,22 @@ section#shop-hero {
 
 div.shop-hero {
     height: 100%;
-    background-image: url("img/Traveler\'s-Notebook-Open-Sample.jpg");
+    background-image: url("img/andy-vult-collage.jpg");
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 30px;
+}
+
+/* SHOP > FILTER */
+
+div#myBtnContainer {
+    padding: 30px 60px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 8px;
 }
 
 /* SHOP > PRODUCTS */
@@ -401,14 +546,21 @@ div.shop-hero {
     background-color: white;
     padding: 0px 12px;
     text-align: center;
-    margin: auto;
+    margin: 12px;
     height: 100%;
-    /* display: none; */
+    display: none;
+}
+
+.show {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 350ms ease;
 }
 
 #shop-products > div.product-card:hover {
     box-shadow: 4px 4px 36px var(--champagne-yellow);
-    transition: 450ms;
+    transition: 450ms ease;
 }
 
 .product-name {
@@ -435,10 +587,11 @@ button.btn-addToCart {
     cursor: pointer;
     font-size: 18px;
     border-radius: 22px 50px;
+    transition: 450ms all ease-in-out;
 }
 
 button.btn-addToCart:hover {
-    opacity: 0.7;
+    padding: 12px 60px;
     transition: 450ms all ease-in-out;
 }
 
@@ -469,6 +622,7 @@ div.footer {
 
 div.footer a {
     text-decoration: none;
+    color: black;
 }
 
 div.footer a:visited {
@@ -592,13 +746,17 @@ input#cardnumber::-webkit-outer-spin-button,
 input#cardnumber::-webkit-inner-spin-button,
 input#cvv::-webkit-outer-spin-button,
 input#cvv::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number]#cardnumber,
 input[type=number]#cvv {
-  -moz-appearance: textfield;
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 .form-row {
@@ -674,14 +832,14 @@ input#cvv {
     width: 80%;
 }
 
-input#checkout-btn {
+input[type="submit"].btn-1 {
     width: 90%;
     margin: auto;
 }
 
-input#checkout-btn:hover {
-    transition : 600ms all ease-in-out;
-    padding: 10px 60px;
+input[type="submit"].btn-1:hover {
+    transition : 300ms all ease-in-out;
+    width: 100%;
     transform : translateY(-0px);
     background: linear-gradient(90deg, var(--bistre-brown) 0%, var(--auburn-red) 100%);
     color: #ffffff;
@@ -740,6 +898,7 @@ input#checkout-btn:hover {
 
     section#shop-products {
         grid-template-columns: 1fr 1fr;
+        gap: 12px 0px;
     }
 
     div.product-card button {
@@ -851,9 +1010,11 @@ input#checkout-btn:hover {
         height: calc(50% - calc(20px * 2));
     }
 
-    #shop-products {
+    div#myBtnContainer {
+        padding: 30px 8px 0px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     #shop-products > div.product-card {
