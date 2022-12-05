@@ -925,11 +925,18 @@ input[type="submit"].btn-1:hover {
 
     section#shop-products {
         grid-template-columns: 1fr 1fr;
-        gap: 24px 0px;
+        column-gap: 0px;
     }
 
     div.product-card button {
         font-size: 14px;
+    }
+
+    section#about-us {
+        padding: 30px !important;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 36px;
     }
 
     div.footer {
